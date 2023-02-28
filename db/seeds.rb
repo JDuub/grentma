@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
+require "cloudinary"
 puts "Getting those amazing grandmas"
 puts "Hold on"
 Grandma.destroy_all
