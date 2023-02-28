@@ -6,5 +6,5 @@ class Grandma < ApplicationRecord
   validates :user_id, presence: true
   has_many :users, through: :bookings, dependent: :destroy
   has_one_attached :photo
-  validates :description, length: { minimum: 6 }
+  #validates :description, length: { minimum: 4 }
 end
