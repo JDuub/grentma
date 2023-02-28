@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 require "cloudinary"
+require "open-uri"
+
 puts "Getting those amazing grandmas"
 puts "Hold on"
 Grandma.destroy_all
@@ -16,8 +18,9 @@ Grandma.destroy_all
     password: '123456'
   )
 end
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
 20.times do
-Grandma.create!(
+grandma = Grandma.create!(
     first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
     location: Faker::Address.full_address,
