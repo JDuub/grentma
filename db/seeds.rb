@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "faker"
+
+puts "Getting those amaying grandmas "
+puts "Hold on"
+
+Grandma.destroy_all
+
+
+20.times do
+grand = Grandma.create(
+    first_name: Faker::Name.female_first_name,
+    last_name: Faker::Name.last_name ,
+    location: Faker::Address.full_address,
+    skills: Faker::Hobby.activity,
+    image_url: Faker::Avatar.image,
+  )
+  puts "Created #{grand.image_url}"
+end
