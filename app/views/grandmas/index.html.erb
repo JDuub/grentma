@@ -1,9 +1,11 @@
-<h1>Welcome to grentma!</h1>
-<<div class="d-flex align-content-stretch justify-content-center flex-wrap">
+<h1 class="text-center m-5 ">Welcome to grentma!</h1>
+<div class="container">
+<div class="row">
+<div class="d-flex align-content-stretch justify-content-between flex-wrap">
 <% @grandmas.each do |grandma| %>
   <div class="card">
-      <%= link_to grandma do %>
-    <div class="image">
+      <%= link_to grandma , class:"disable_decoration" do %>
+    <div class="card-img">
       <img src= <%= grandma.image_url %> />
     </div>
     <div class="card-inner">
