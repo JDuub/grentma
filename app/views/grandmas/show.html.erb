@@ -1,14 +1,7 @@
+<div class="container">
+  <div class="main-image">
+    <%= cl_image_tag @grandma.image_url.key, height: 300, width: 400, crop: :fill %>
+  </div>
 
-<div class="col-md-6 feed-photos">
-  <div class="position-absolute" style="width:422px; height:419px; top:257px;">
-    <div class="row">
-      <% @grandma.feed_photos.each_slice(2) do |slice| %>
-        <div class="col-6">
-          <% slice.each do |photo| %>
-            <img src="<%= photo %>" class="img-fluid" />
-          <% end %>
-        </div>
-      <% end %>
-    </div>
   </div>
 </div>
