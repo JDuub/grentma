@@ -1,4 +1,5 @@
 class GrandmasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_grandma, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,7 +18,8 @@ class GrandmasController < ApplicationController
 
   def create
     @grandma = Grandma.new(grandma_params)
-    if @grandma.save
+    @grandma.user = current_user
+    if @grandma.save!
       redirect_to grandma_path(@grandma)
     else
       render :new, status: :unprocessable_entity
@@ -40,7 +42,7 @@ class GrandmasController < ApplicationController
   private
 
   def grandma_params
-    params.require(:grandma).permit(:first_name, :last_name, :location, :skills, :description, :image_url)
+    params.require(:grandma).permit(:first_name, :last_name, :location, :skills, :price, :description, image_url: [])
   end
 
   def set_grandma
