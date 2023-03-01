@@ -28,7 +28,7 @@
           <%= f.text_field :price, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.file_field :image_url, multiple: true, class: 'form-control-file' %>
+          <%= f.file_field :image_url, multiple: true, class: 'form-control-file', button_text: 'Add Photo'%>
         </div>
         <%= f.submit 'Submit', class: 'btn btn-primary btn-block mt-3' %>
       <% end %>
