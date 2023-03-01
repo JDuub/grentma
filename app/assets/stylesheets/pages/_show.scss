@@ -1,0 +1,20 @@
+.main-image {
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.feed-photos {
+  position: relative;
+  .position-absolute {
+    .row {
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
