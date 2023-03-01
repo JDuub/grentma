@@ -144,6 +144,10 @@ GEM
       net-imap
       net-pop
       net-smtp
+    marc (1.2.0)
+      rexml
+      scrub_rb (>= 1.0.1, < 2)
+      unf
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -170,6 +174,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
+    openurl (1.0.0)
+      marc
+      scrub_rb (~> 1.0)
     orm_adapter (0.5.0)
     pg (1.4.6)
     public_suffix (5.0.1)
@@ -227,6 +234,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scrub_rb (1.0.1)
     selenium-webdriver (4.8.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -252,6 +260,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
+    url (0.3.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -288,6 +297,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
+  openurl (~> 1.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
@@ -298,6 +308,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  url (~> 0.3.2)
   web-console
   webdrivers
 

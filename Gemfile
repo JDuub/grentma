@@ -80,3 +80,5 @@ gem "devise"
 gem "faker"
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
+gem 'url', '~> 0.3.2'
+gem 'openurl', '~> 1.0'
