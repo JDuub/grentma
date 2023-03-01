@@ -64,8 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_103027) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "feed_photos"
     t.decimal "price"
+    t.string "feed_photos"
     t.index ["user_id"], name: "index_grandmas_on_user_id"
   end
 

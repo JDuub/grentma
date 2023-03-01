@@ -5,31 +5,34 @@
       <%= simple_form_for(@grandma, html: { class: 'form-horizontal' }) do |f| %>
         <div class="form-group">
           <%= f.label :first_name, class: 'control-label' %>
-          <%= f.text_field :first_name, class: 'form-control' %>
+          <%= f.text_field :first_name, class: 'form-control', placeholder: 'Elke'  %>
         </div>
         <div class="form-group">
           <%= f.label :last_name, class: 'control-label' %>
-          <%= f.text_field :last_name, class: 'form-control' %>
+          <%= f.text_field :last_name, class: 'form-control', placeholder: 'Elken'  %>
         </div>
         <div class="form-group">
-          <%= f.label :location, class: 'control-label' %>
-          <%= f.text_field :location, class: 'form-control' %>
+          <%= f.label :location, class: 'control-label'%>
+          <%= f.text_field :location, class: 'form-control', placeholder: 'Berlin' %>
         </div>
         <div class="form-group">
           <%= f.label :description, class: 'control-label' %>
-          <%= f.text_area :description, class: 'form-control' %>
+          <%= f.text_area :description, class: 'form-control', placeholder: 'Neat and friendly' %>
         </div>
         <div class="form-group">
-          <%= f.label :skills, class: 'control-label' %>
-          <%= f.text_field :skills, class: 'form-control' %>
+          <%= f.label :skills, class: 'control-label'%>
+          <%= f.text_field :skills, class: 'form-control', placeholder: 'Tennis' %>
         </div>
           <div class="form-group">
           <%= f.label :price, class: 'control-label' %>
-          <%= f.text_field :price, class: 'form-control' %>
+          <%= f.text_field :price, class: 'form-control', placeholder: '55$' %>
         </div>
         <div class="form-group">
-          <%= f.file_field :image_url, multiple: true, class: 'form-control-file', button_text: 'Add Photo'%>
+         <%= f.input :image_url, as: :file, label: "Choose a profile image", button_text: "Browse for file" %>
         </div>
+          <div class="form-group">
+           <%= f.input :feed_photos, multiple: true, label: "Choose your skill images", button_text: "Browse for file" %>
+          </div>
         <%= f.submit 'Submit', class: 'btn btn-primary btn-block mt-3' %>
       <% end %>
     </div>
