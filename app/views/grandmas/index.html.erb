@@ -1,0 +1,21 @@
+<h1>Welcome to grentma!</h1>
+<<div class="d-flex align-content-stretch justify-content-center flex-wrap">
+<% @grandmas.each do |grandma| %>
+  <div class="card">
+      <%= link_to grandma do %>
+    <div class="image">
+      <img src= <%= grandma.image_url %> />
+    </div>
+    <div class="card-inner">
+      <div class="header">
+        <h2><%= grandma.first_name %></h2>
+         <h3><%= grandma.skills %></h3>
+    </div>
+    <div class="content">
+      <p><%= grandma.description %></p>
+    </div>
+      </div>
+  </div>
+<% end %>
+ <% end %>
+</div>
