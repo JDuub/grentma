@@ -1,4 +1,4 @@
-<div class="main-text" style="position: relative;left: 92px;top: 24px;">
+<div class="main-text" style="position: relative;left: 92px;top: 62px;">
 
  <h3><%= @grandma.first_name %>  <%= @grandma.last_name %></h3>
  <p><%= @grandma.skills %></p>
@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 main-image">
-      <img src="<%= @grandma.image_url %>" width="721" height="419" style="position:relative;top:42px;left: 22px;width: 600px;height: 360px;">
+      <img src="<%= @grandma.image_url %>" width="721" height="419" style="position:relative;top:68px;left: 22px;width: 600px;height: 360px;">
     </div>
     <% feed_photos = JSON.parse(@grandma.feed_photos).shuffle.uniq.first(4) %>
     <% if feed_photos.any? %>
