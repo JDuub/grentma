@@ -30,9 +30,10 @@ for i in 0...addresses.length do
     skills: Faker::Hobby.activity,
     user_id: User.all.sample.id
   )
+
   rand_num = rand(2..14)
   file = URI.open("app/assets/images/profile/#{rand_num}- feed.png")
-    grandma.image_url.attach(io: file, filename: "#{rand_num}.png", content_type: "image/png")
+  grandma.image_url.attach(io: file, filename: "#{rand_num}.png", content_type: "image/png")
 
   # FEED
     2.times do
@@ -109,3 +110,4 @@ for i in 0...addresses.length do
     user_id: User.all.sample.id
   )
 end
+
