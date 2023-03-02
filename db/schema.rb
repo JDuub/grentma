@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2023_03_01_110426) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_104547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +54,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_110426) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "grandma_ids", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "grandmas", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -66,10 +71,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_110426) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
     t.decimal "price"
     t.text "feed_photos", default: [], array: true
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_grandmas_on_user_id"
   end
 
