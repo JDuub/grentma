@@ -1,0 +1,11 @@
+<div class = "container">
+<h1>Your booking with <%= @booking.grandma.first_name %> was created 🎉</h1>
+
+<p> Details: </p>
+<p>First Name <%= @booking.grandma.first_name  %></p>
+<p>Last Name <%= @booking.grandma.last_name  %></p>
+<p>Location <%= @booking.grandma.location  %></p>
+<p>Total: <%= @booking.grandma.price  %></p>
+
+<%= link_to "book another grandma", grandmas_path %>
+</div>
