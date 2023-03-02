@@ -13,13 +13,18 @@
     <div class="card-inner">
       <div class="header">
         <h2><%= grandma.first_name %></h2>
-         <h3><%= grandma.skills %></h3>
-    </div>
-    <div class="content">
-      <p><%= grandma.description %></p>
-    </div>
+        <h3><%= grandma.skills %></h3>
       </div>
+      <div class="content">
+        <p><%= grandma.description %></p>
+      </div>
+    </div>
   </div>
-<% end %>
+      <% end %>
  <% end %>
+ <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
