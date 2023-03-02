@@ -1,7 +1,34 @@
-<div class="container">
-  <div class="main-image">
-    <%= cl_image_tag @grandma.image_url.key, height: 300, width: 400, crop: :fill %>
-  </div>
+<h1><%= @grandma.first_name %></h1>
 
+<div>
+  <%= image_tag @grandma.image_url %>
+</div>
+
+<div>
+  <h2>Location:</h2>
+  <p><%= @grandma.location %></p>
+</div>
+
+<div>
+  <h2>Skills:</h2>
+  <p><%= @grandma.skills %></p>
+</div>
+
+<div>
+  <h2>Description:</h2>
+  <p><%= @grandma.description %></p>
+</div>
+
+<% if @grandma.feed_photos.any? %>
+  <div>
+    <h2>Feed Photos:</h2>
+    <% @grandma.feed_photos.each do |photo| %>
+      <%= image_tag photo %>
+    <% end %>
   </div>
+<% end %>
+
+<div>
+  <%= link_to "Edit", edit_grandma_path(@grandma) %>
+  <%= button_to "Delete", grandma_path(@grandma), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove"} %>
 </div>
