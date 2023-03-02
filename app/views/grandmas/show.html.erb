@@ -1,7 +1,44 @@
-<div class="container">
-  <div class="main-image">
-    <%= cl_image_tag @grandma.image_url.key, height: 300, width: 400, crop: :fill %>
+<h1><%= @grandma.first_name %> <%= @grandma.last_name %></h1>
+
+<p>Location: <%= @grandma.location %></p>
+<p>Skills: <%= @grandma.skills %></p>
+
+<% if @grandma.image_url.attached? %>
+  <%= image_tag @grandma.image_url %>
+<% end %>
+
+<% if @grandma.feed_photos.attached? %>
+  <% @grandma.feed_photos.each do |photo| %>
+    <%= image_tag photo %>
+  <% end %>
+<% end %>
+
+<%= form_with model: @grandma, local: true do |form| %>
+  <% if @grandma.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grandma.errors.count, "error") %> prohibited this grandma from being saved:</h2>
+
+      <ul>
+      <% @grandma.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.file_field :image_url %>
   </div>
 
+  <div class="field">
+    <%= form.label :feed_photos %>
+    <%= form.file_field :feed_photos, multiple: true %>
   </div>
-</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_grandma_path(@grandma) %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_01_103027) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_194556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,17 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_103027) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "price"
-    t.string "feed_photos"
+    t.text "feed_photos", default: [], array: true
     t.index ["user_id"], name: "index_grandmas_on_user_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer "user_rating"
-    t.text "user_comment"
-    t.text "dealer_rating"
-    t.text "dealer_comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
