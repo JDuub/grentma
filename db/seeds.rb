@@ -34,3 +34,4 @@ end
       grandma.feed_photos.attach(io: file, filename: "#{rand_num}.jpg", content_type: "image/jpg")
     end
 end
+
