@@ -11,7 +11,7 @@ class GrandmasController < ApplicationController
   end
 
   def show
-    @grandma = Grandma.find(params[:id])
+    @grandma
     end
 
   def edit
@@ -28,14 +28,6 @@ class GrandmasController < ApplicationController
   end
 
   def update
-    if @grandma.update(grandma_params)
-      redirect_to @grandma
-    else
-      render :edit
-    end
-  end
-
-  def update
     @grandma = Grandma.find(params[:id])
     if @grandma.update(grandma_params)
       redirect_to @grandma, notice: 'Grandma was successfully updated.'
@@ -45,9 +37,10 @@ class GrandmasController < ApplicationController
   end
 
   def destroy
+    @grandma = Grandma.find(params[:id])
     @grandma.destroy
-    redirect_to grandma_path, status: :see_other
-   end
+    redirect_to grandmas_path
+  end
 
   private
 
@@ -58,6 +51,4 @@ class GrandmasController < ApplicationController
   def set_grandma
     @grandma = Grandma.find(params[:id])
   end
-
-
 end
