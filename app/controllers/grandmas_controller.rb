@@ -4,6 +4,12 @@ class GrandmasController < ApplicationController
 
   def index
     @grandmas = Grandma.all
+    @markers = @grandmas.geocoded.map do |grandma|
+      {
+        lat: grandma.latitude,
+        lng: grandma.longitude
+      }
+    end
   end
 
   def new
@@ -49,3 +55,4 @@ class GrandmasController < ApplicationController
     @grandma = Grandma.find(params[:id])
   end
 end
+

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @grandma_id %>
+
+<div>
+  <%= link_to "Edit this grandma", edit_grandma_id_path(@grandma_id) %> |
+  <%= link_to "Back to grandmas", grandma_ids_path %>
+
+  <%= button_to "Destroy this grandma", @grandma_id, method: :delete %>
+</div>
