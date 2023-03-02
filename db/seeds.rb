@@ -23,15 +23,14 @@ end
   )
   # PROFILE PIC
   rand_num = rand(2..8)
-  file = URI.open("app/assets/images/profile/#{rand_num}- FEED.png")
+  file = URI.open("app/assets/images/PROFILE/#{rand_num}- FEED.png")
     grandma.image_url.attach(io: file, filename: "#{rand_num}.png", content_type: "image/png")
 
   # FEED
 
     2.times do
       rand_num = rand(2..8)
-      file = URI.open("app/assets/images/feed/#{rand_num}- FEED.jpg")
+      file = URI.open("app/assets/images/FEED/#{rand_num}- FEED.jpg")
       grandma.feed_photos.attach(io: file, filename: "#{rand_num}.jpg", content_type: "image/jpg")
     end
 end
-
