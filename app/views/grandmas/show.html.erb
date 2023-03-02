@@ -1,44 +1,34 @@
-<h1><%= @grandma.first_name %> <%= @grandma.last_name %></h1>
+<h1><%= @grandma.first_name %></h1>
 
-<p>Location: <%= @grandma.location %></p>
-<p>Skills: <%= @grandma.skills %></p>
-
-<% if @grandma.image_url.attached? %>
+<div>
   <%= image_tag @grandma.image_url %>
-<% end %>
+</div>
 
-<% if @grandma.feed_photos.attached? %>
-  <% @grandma.feed_photos.each do |photo| %>
-    <%= image_tag photo %>
-  <% end %>
-<% end %>
+<div>
+  <h2>Location:</h2>
+  <p><%= @grandma.location %></p>
+</div>
 
-<%= form_with model: @grandma, local: true do |form| %>
-  <% if @grandma.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@grandma.errors.count, "error") %> prohibited this grandma from being saved:</h2>
+<div>
+  <h2>Skills:</h2>
+  <p><%= @grandma.skills %></p>
+</div>
 
-      <ul>
-      <% @grandma.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div>
+  <h2>Description:</h2>
+  <p><%= @grandma.description %></p>
+</div>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.file_field :image_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :feed_photos %>
-    <%= form.file_field :feed_photos, multiple: true %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<% if @grandma.feed_photos.any? %>
+  <div>
+    <h2>Feed Photos:</h2>
+    <% @grandma.feed_photos.each do |photo| %>
+      <%= image_tag photo %>
+    <% end %>
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_grandma_path(@grandma) %>
+<div>
+  <%= link_to "Edit", edit_grandma_path(@grandma) %>
+  <%= button_to "Delete", grandma_path(@grandma), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove"} %>
+</div>

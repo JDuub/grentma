@@ -46,8 +46,8 @@ class GrandmasController < ApplicationController
 
   def destroy
     @grandma.destroy
-    # redirection path tbd
-  end
+    redirect_to grandma_path, status: :see_other
+   end
 
   private
 
