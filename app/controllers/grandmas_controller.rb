@@ -7,7 +7,8 @@ class GrandmasController < ApplicationController
     @markers = @grandmas.geocoded.map do |grandma|
       {
         lat: grandma.latitude,
-        lng: grandma.longitude
+        lng: grandma.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {grandma: grandma})
       }
     end
   end
@@ -58,4 +59,3 @@ class GrandmasController < ApplicationController
     @grandma = Grandma.find(params[:id])
   end
 end
-
