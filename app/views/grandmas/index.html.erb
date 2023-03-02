@@ -6,7 +6,9 @@
   <div class="card">
       <%= link_to grandma , class:"disable_decoration" do %>
     <div class="card-img">
-      <img src= <%= grandma.image_url %> />
+    <% if grandma.image_url.attached? %>
+      <%= image_tag grandma.image_url %>
+    <% end %>
     </div>
     <div class="card-inner">
       <div class="header">
