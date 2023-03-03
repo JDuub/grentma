@@ -6,11 +6,11 @@ body {
 }
 
 /* Header */
-.container {
-  background: url(/assets/home_page_photos/bg_home-2f1a7a67d6796f9e2c5b6d4fb6524d4f9660ad6b5eb6e3cf85df08e1b9ef9bda.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-}
+// .container {
+//   background: url(/assets/home_page_photos/bg_home-2f1a7a67d6796f9e2c5b6d4fb6524d4f9660ad6b5eb6e3cf85df08e1b9ef9bda.jpg) no-repeat center center fixed;
+//   background-size: cover;
+//   height: 100vh;
+// }
 
 /* Texte centré */
 .text-center {
@@ -38,8 +38,22 @@ body {
   margin-bottom: 50px;
 }
 
+.overlay {
+  width: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home-header {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+}
+
 /* Boutons */
-.btn-primary {
+.new-grandma-button {
   background-color: #f0d9ff;
   border: none;
   color: #000000;
@@ -47,16 +61,20 @@ body {
   font-weight: bold;
   padding: 16px 24px;
   margin-right: 10px;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
-.btn-secondary {
+.grandmas-button {
   background-color: #ffffff;
   border: 2px solid #f0d9ff;
-  color: #f0d9ff;
+  color: #000000;
   font-size: 16px;
   font-weight: bold;
   padding: 16px 24px;
   margin-left: 10px;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 /* Block 2 */
@@ -131,6 +149,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 #bg-video {
