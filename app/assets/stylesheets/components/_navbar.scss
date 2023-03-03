@@ -12,24 +12,11 @@
   height: 50px;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: #f0d9ff;
-  border: 1px solid #d2c2e6;
-  border-radius: 10px;
-  width: 300px;
-  height: 40px;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+.navbar-picture-fix {
+  width: 142px;
+  justify-content: end;
 
-.search-bar h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-right: 10px;
-  color: #4a4a4a;
+  ul {
+    margin: 0 !important;
+  }
 }
