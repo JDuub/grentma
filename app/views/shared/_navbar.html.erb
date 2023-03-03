@@ -1,19 +1,55 @@
 <!-- Navbar -->
 <nav class="navbar navbar-light" style="background-color: #D490BF;">
   <div class="container-fluid">
-    <div class="mx-auto">
-      <div class="form-group" >
-        <label for="exampleInputEmail1"></label>
+    <%= image_tag "home_page_photos/Component 2.png", style: "width:10%" %>
+
+<div class="mx-auto">
+      <div class="form-group">
         <a button class="btn btn-info" href="#searchModal" data-bs-toggle="modal" class="form-control" aria-describedby="emailHelp">Find your Grandma</a>
-        <small id="emailHelp" class="form-text text-muted"></small>
       </div>
     </div>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Home", grandmas_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Rent-a-grandma", new_grandma_path, class: "nav-link" %>
+          </li>
+            <li class="nav-item">
+            <%= link_to "MESSEGES", new_grandma_path, class: "nav-link" %>
+          </li>
+            <li class="nav-item">
+            <%= link_to "Edit profile", new_grandma_path, class: "nav-link" %>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
   </div>
+
 </nav>
 
 <!-- Search modal code -->
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
   <div class="modal-dialog">
+
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Search for a Grandma</h5>
@@ -38,6 +74,7 @@
               </div>
             <% end %>
           </div>
+    </div>
         </div>
       </div>
     </div>
