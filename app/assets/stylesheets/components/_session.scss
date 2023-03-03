@@ -1,0 +1,98 @@
+.login-container {
+  margin: 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  }
+
+  .login-container h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  }
+
+  .form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  }
+
+  .form-inputs input {
+  margin-bottom: 10px;
+  }
+
+  .form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  }
+
+  .btn-primary {
+  background-color: #f0d9ff;
+  border: none;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px 24px;
+  margin-right: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  }
+
+  .login-link {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666666;
+  }
+
+  .login-link a {
+  color: #666666;
+  font-weight: bold;
+  }
+
+  .login-container .card {
+  width: 100%;
+  max-width: 400px;
+  }
+
+  .card-header {
+  background-color: #f0d9ff;
+  text-align: center;
+  padding: 20px;
+  }
+
+  .card-header h2 {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  }
+
+  .card-body {
+  padding: 20px;
+  }
+
+  .form-control {
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
