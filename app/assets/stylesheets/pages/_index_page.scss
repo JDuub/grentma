@@ -66,3 +66,40 @@ body {
   padding-top: 12px;
   top: 0;
 }
+
+.pop-up {
+  box-shadow: 1px 1px 1px grey;
+  width: 90px;
+  height: 90px;
+  box-shadow: 1px 1px 1x 1px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.cards-grid-popup {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  justify-items: center;
+}
+
+.pop-container{
+  display: flex;
+  align-items: center;
+
+  h5{
+    text-align: left;
+    margin-left: 19px;
+  }
+}
+
+.mapboxgl-popup-content{
+background: #fff !important;
+    border-radius: 3px !important;
+
+    padding: 24px 10px 15px !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    border-radius: 20px;
+  }
