@@ -1,14 +1,21 @@
 <div class="background-grandma">
-  <h1 style="color: black;">Grandmothers and grandchildren were made to meet</h1>
-        <h3 style="color: black;" class="mb-5">Find the perfect grandmother to experience the feeling of your childhood</h3>
-         <div class="button-container">
-          <a href="/grandmas/new" class="btn btn-primary btn-lg">Put your Grandma Online</a>
-          <a href="/grandmas" class="btn btn-secondary btn-lg">Live an Experience with a Grandma</a>
-        </div>
+  <video autoplay muted loop id="bg-video">
+    <source src="<%= asset_path('home_page_photos/My project.mp4') %>" type="video/mp4">
+  </video>
+  <div class="overlay">
+    <h1 style="color: black;">Grandmothers and grandchildren were made to meet</h1>
+    <h3 style="color: black;" class="mb-5">Find the perfect grandmother to experience the feeling of your childhood</h3>
+    <div class="button-container">
+      <a href="/grandmas/new" class="btn btn-primary btn-lg">Put your Grandma Online</a>
+      <a href="/grandmas" class="btn btn-secondary btn-lg">Live an Experience with a Grandma</a>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-   
+
+
+<%# <div class="container">
+
 
     <div class="row">
       <div class="col-md-12 text-center">
@@ -55,4 +62,4 @@
           </div>
         </a>
       </div>
-    </div>
+    </div> %>
