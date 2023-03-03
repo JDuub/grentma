@@ -1,3 +1,11 @@
-<h2><%= grandma.first_name %></h2>
-<h2><%= grandma.last_name %></h2>
-<p><%= grandma.location %></p>
+<div class="container">
+  <div class="row">
+    <div class="pop-container">
+      <%= image_tag grandma.image_url, class: "pop-up"%>
+      <h5><%= grandma.first_name %> <%= grandma.last_name %></h5>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <p><%= grandma.location %></p>
+  </div>
+</div>

@@ -2,8 +2,6 @@ require "faker"
 require "cloudinary"
 require "open-uri"
 
-
-
 puts "Getting those amazing grandmas"
 puts "Hold on"
 
@@ -34,13 +32,19 @@ for i in 0...addresses.length do
   )
 
   rand_num = rand(2..14)
-  file = URI.open("app/assets/images/profile/#{rand_num}- feed.png")
-  grandma.image_url.attach(io: file, filename: "#{rand_num}.png", content_type: "image/png")
+  selected_image = grandma.image_url.attached? ? grandma.image_url : "app/assets/images/profile/#{rand_num}- feed.png"
+  file = URI.open(selected_image)
+  grandma.image_url.attach(io: file, filename: "#{rand_num}.png", content_type: "image/png") unless grandma.image_url.attached?
 
   # FEED
-    2.times do
-      rand_num = rand(2..14)
-      file = URI.open("app/assets/images/feed/#{rand_num}- feed.jpg")
-      grandma.feed_photos.attach(io: file, filename: "#{rand_num}.jpg", content_type: "image/jpg")
+  2.times do
+    rand_num = rand(2..14)
+    selected_feed_photo = nil
+    loop do
+      selected_feed_photo = "app/assets/images/feed/#{rand_num}- feed.jpg"
+      break if !grandma.feed_photos.attached? || !grandma.feed_photos.map{|photo| photo.filename.to_s}.include?("#{rand_num}.jpg")
     end
+    file = URI.open(selected_feed_photo)
+    grandma.feed_photos.attach(io: file, filename: "#{rand_num}.jpg", content_type: "image/jpg")
+  end
 end
