@@ -2,7 +2,7 @@
 
 /* Background */
 body {
-  background-color: #ffffff;
+  background-color: white;
 }
 
 /* Header */
@@ -130,6 +130,10 @@ body {
 
 /* Footer */
 .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
   color: rgba(0, 0, 0, 0.3);
   margin-bottom: 40px;
 }

@@ -16,6 +16,7 @@
 
   <body>
     <%= render "shared/navbar" unless request.path == "/" %>
+
     <%= yield %>
     <%= render "shared/footer" unless request.path == "/" %>
     <p class="notice"><%= notice %></p>

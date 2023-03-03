@@ -1,36 +1,46 @@
-<h1><%= @grandma.first_name %></h1>
 
-<div>
-  <%= image_tag @grandma.image_url %>
-</div>
+<div class = "container" >
+  <div class ="d-flex my-3">
+    <h1><%= @grandma.first_name  %> <%= @grandma.last_name  %></h1>
+  </div>
 
-<div>
-  <h2>Location:</h2>
-  <p><%= @grandma.location %></p>
-</div>
 
-<div>
-  <h2>Skills:</h2>
-  <p><%= @grandma.skills %></p>
-</div>
 
-<div>
-  <h2>Description:</h2>
-  <p><%= @grandma.description %></p>
-</div>
+  <div class="d-flex images mb-3">
+    <%= cl_image_tag @grandma.image_url.key, class: "show-image-left" %>
 
-<% if @grandma.feed_photos.any? %>
-  <div>
-    <h2>Feed Photos:</h2>
-    <% @grandma.feed_photos.each do |photo| %>
-      <%= image_tag photo %>
+    <% if @grandma.feed_photos.any? %>
+      <div class="show-image-right-container">
+        <% @grandma.feed_photos.each do |photo| %>
+          <%= cl_image_tag photo.key, class: "show-image-right" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
 
-<div>
-  <%= link_to "Edit", edit_grandma_path(@grandma) %>
-<%= button_to "Delete", grandma_path(@grandma), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<div class="list-group">
+    <div >
+      <h2>Location:</h2>
+      <p class="list-group-item list-group-item-light"><%= @grandma.location %></p>
+    </div>
+
+    <div>
+      <h2>Skills:</h2>
+      <p class="list-group-item list-group-item-light"><%= @grandma.skills %></p>
+    </div>
+
+    <div>
+      <h2>Description:</h2>
+      <p class="list-group-item list-group-item-light" ><%= @grandma.description %></p>
+    </div>
 </div>
 
-<%= link_to "Reserve Grandma", new_grandma_booking_path(@grandma), class: "btn btn-primary" %>
+  <div class ="d-flex">
+
+    <%= link_to "Reserve", new_grandma_booking_path(@grandma), class: "btn btn-primary me-3 buttons-show" %>
+    <%# <%= link_to "Edit", edit_grandma_path(@grandma), class: "btn btn-primary me-3 buttons-show" %>
+    <%# <%= button_to "Delete", grandma_path(@grandma), class: "btn btn-danger buttons-show", method: :delete, data: { confirm: "Are you sure?" } %> 
+
+  </div>
+</div>
