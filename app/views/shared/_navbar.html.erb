@@ -1,9 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!-- Navbar -->
+<nav class="navbar navbar-light" style="background-color: #D490BF;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<%= grandmas_path %>">
-      <img class="logo-img" src="/assets/logo_grandma-8b2387f617b5a58b413769ab167b0842eb81aacb59b40d404c1189c348e46c2a.png">
-    </a>
-
+    <%= image_tag "home_page_photos/Component 2.png", style: "width:10%" %>
 
     <div class="form-group search-bar-navbar">
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address">
@@ -17,21 +15,68 @@
     
     <div class="collapse navbar-collapse navbar-picture-fix" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/grandmas/new">Create a Grandma</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/grandmas/new">Create a Grandma</a>
-            <a class="dropdown-item" href="/grandmas">Show All The Grandma</a>
-            <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-          </div>
-        </li>
+        <%# if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Home", grandmas_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Rent-a-grandma", new_grandma_path, class: "nav-link" %>
+          </li>
+            <li class="nav-item">
+            <%= link_to "MESSEGES", new_grandma_path, class: "nav-link" %>
+          </li>
+            <li class="nav-item">
+            <%= link_to "Edit profile", new_grandma_path, class: "nav-link" %>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
       </ul>
+    </div>
+  </div>
+
+</nav>
+
+<!-- Search modal code -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Search for a Grandma</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="search">
+            <%= form_tag search_grandmas_path, method: :get do %>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="search-1">
+                    <i class='bx bx-search-alt'></i>
+                    <%= text_field_tag :query, nil, class: "form-control form-control-lg", placeholder: "Search for a Grandma" %>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-12">
+                  <%= submit_tag "Search", class: "btn btn-info btn-lg w-100" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+    </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
