@@ -3,11 +3,11 @@
     <source src="<%= asset_path('home_page_photos/My project.mp4') %>" type="video/mp4">
   </video>
   <div class="overlay">
-    <h1 style="color: black;">Grandmothers and grandchildren were made to meet</h1>
-    <h3 style="color: black;" class="mb-5">Find the perfect grandmother to experience the feeling of your childhood</h3>
+    <h1 class="home-header mb-2">Grandmothers and grandchildren were made to meet</h1>
+    <h3 class="home-header mb-4">Find the perfect grandmother to experience the feeling of your childhood</h3>
     <div class="button-container">
-      <a href="/grandmas/new" class="btn btn-primary btn-lg">Put your Grandma Online</a>
-      <a href="/grandmas" class="btn btn-secondary btn-lg">Live an Experience with a Grandma</a>
+      <%= link_to "Put your Grandma Online", new_grandma_path, class: "new-grandma-button" %>
+      <%= link_to "Live an Experience with a Grandma", grandmas_path, class: "grandmas-button" %>
     </div>
   </div>
 </div>
