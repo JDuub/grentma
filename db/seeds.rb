@@ -1,7 +1,6 @@
 require "faker"
-require "cloudinary"
 require "open-uri"
-
+require "cloudinary"
 
 
 puts "Getting those amazing grandmas"
