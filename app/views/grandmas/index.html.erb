@@ -1,28 +1,33 @@
 <h1 class="text-center m-5 ">Welcome to grentma!</h1>
-<div class="container">
-<div class="row">
-<div class="d-flex align-content-stretch justify-content-between flex-wrap">
-<% @grandmas.each do |grandma| %>
-  <div class="card">
-      <%= link_to grandma , class:"disable_decoration" do %>
-    <div class="card-img">
-    <% if grandma.image_url.attached? %>
-      <%= image_tag grandma.image_url %>
-    <% end %>
-    </div>
-    <div class="card-inner">
-      <div class="header">
-        <h2><%= grandma.first_name %></h2>
-         <h3><%= grandma.skills %></h3>
-    </div>
-      </div>
-    </div>
-  </div>
+<div class="index-container">
+  <div class="row">
+    <div class="col-12 col-lg-7 cards-grid">
+      <% @grandmas.each do |grandma| %>
+        <div class="card">
+          <%= link_to grandma , class:"disable_decoration" do %>
+            <div class="card-img">
+            <% if grandma.image_url.attached? %>
+            <%= image_tag grandma.image_url %>
+            <% end %>
+            </div>
+            <div class="card-inner">
+              <div class="header">
+                <h2><%= grandma.first_name %></h2>
+                <h3><%= grandma.skills %></h3>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
- <% end %>
- <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+    </div>
+
+
+      <div class="col-12 col-lg-5 map-padding">
+        <div style="width: 100%; height: 100%;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+
 </div>

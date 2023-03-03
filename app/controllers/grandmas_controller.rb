@@ -19,7 +19,7 @@ class GrandmasController < ApplicationController
 
   def show
     @grandma
-    end
+  end
 
   def edit
   end
