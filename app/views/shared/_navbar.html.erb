@@ -3,17 +3,17 @@
   <div class="container-fluid">
     <%= image_tag "home_page_photos/Component 2.png", style: "width:10%" %>
 
-    <div class="form-group search-bar-navbar">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address">
-      <small id="emailHelp" class="form-text text-muted">Find the perfect grandma for you. 👵🏽</small>
+<div class="mx-auto">
+      <div class="form-group">
+        <a button class="btn btn-info" href="#searchModal" data-bs-toggle="modal" class="form-control" aria-describedby="emailHelp">Find your Grandma</a>
+      </div>
     </div>
-
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <div class="collapse navbar-collapse navbar-picture-fix" id="navbarSupportedContent">
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item dropdown">
@@ -35,11 +35,6 @@
             <li class="nav-item">
             <%= link_to "Edit profile", new_grandma_path, class: "nav-link" %>
           </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
       </ul>
     </div>
   </div>
