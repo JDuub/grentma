@@ -23,6 +23,10 @@ class GrandmasController < ApplicationController
 
   def edit
   end
+  
+  def search
+    @grandmas = Grandma.search(params[:query])
+  end
 
   def create
     @grandma = Grandma.new(grandma_params)

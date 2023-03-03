@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :grandmas do
     resources :bookings
   end
+  get 'search_grandmas', to: 'grandmas#search', as: 'search_grandmas'
 end

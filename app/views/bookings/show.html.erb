@@ -1,11 +1,12 @@
-<div class = "container">
-<h1>Your booking with <%= @booking.grandma.first_name %> was created 🎉</h1>
+<div class = "container booking-success mt-3">
+<h1>Your booking with <%= @booking.grandma.first_name %> was created 👵🏽🎉</h1>
 
-<p> Details: </p>
-<p>First Name <%= @booking.grandma.first_name  %></p>
-<p>Last Name <%= @booking.grandma.last_name  %></p>
-<p>Location <%= @booking.grandma.location  %></p>
-<p>Total: <%= @booking.grandma.price  %></p>
+<strong>Details:</strong>
 
-<%= link_to "book another grandma", grandmas_path %>
+<p >Reference: <%= @booking.grandma.last_name  %> - X5768 </p>
+<p class="list-group-item list-group-item-dark"  >First Name: <%= @booking.grandma.first_name  %> <%= @booking.grandma.last_name  %></p>
+<p>Location: <%= @booking.grandma.location  %></p>
+<p class="list-group-item list-group-item-dark">Total: 55$</p>
+
+<%= link_to "Book another Grandma", grandmas_path %>
 </div>
