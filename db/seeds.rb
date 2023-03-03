@@ -1,5 +1,4 @@
 require "faker"
-require "cloudinary"
 require "open-uri"
 
 
@@ -41,7 +40,7 @@ for i in 0...addresses.length do
       file = URI.open("app/assets/images/feed/#{rand_num}- feed.jpg")
       grandma.feed_photos.attach(io: file, filename: "#{rand_num}.jpg", content_type: "image/jpg")
     end
-end 
+end
 
 
 
@@ -110,4 +109,3 @@ for i in 0...addresses.length do
     user_id: User.all.sample.id
   )
 end
-

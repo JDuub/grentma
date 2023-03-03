@@ -1,0 +1,27 @@
+.buttons-show {
+  width: 90px;
+}
+
+.images {
+  img {
+    border-radius: 5%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .show-image-left {
+    width: 50%;
+  }
+
+  .show-image-right-container {
+    width: 50%;
+
+    .show-image-right {
+      height: calc(50% - 10px);
+      width: auto;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
