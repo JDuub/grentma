@@ -33,6 +33,19 @@ body {
   background: #EEEDED;
 }
 
+.index-container {
+  padding-right: 5px;
+  padding-left: 0px;
+}
+.cards-grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  justify-items: center;
+  padding-left: 30px;
+}
+
 .card {
   width: 400px;
   height: 450px;
@@ -40,7 +53,6 @@ body {
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
-  margin-top:10px;
   margin-bottom:10px;
   background-color:#FFF;
 }
@@ -76,4 +88,10 @@ body {
 
 .disable_decoration {
   text-decoration: none !important;
+}
+
+.map-padding {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
