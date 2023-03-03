@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Grandmas</h1>
+
+<div id="grandma_ids">
+  <% @grandma_ids.each do |grandma_id| %>
+    <%= render grandma_id %>
+    <p>
+      <%= link_to "Show this grandma", grandma_id %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New grandma", new_grandma_id_path %>
